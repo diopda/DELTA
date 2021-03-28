@@ -1,0 +1,117 @@
+
+  <header>
+    <div class="inner">
+          <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+          <nav>
+              <ul class="sf-menu">
+                  <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                  <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/organe">organes</a></li>
+                        <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                        <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                        <li>
+                          <a href="http://localhost:4200/cuvette">actualités</a>
+                            <ul>
+                              <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                                <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                                <li><a href="http://localhost:4200/activité">activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://localhost:4200/village">villages</a></li>
+                        <li><a href="http://localhost:4200/machine">machines</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="http://localhost:4200/union">union</a>
+                      <ul>
+                        <li><a href="http://localhost:4200/section">sections</a></li>
+                          <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                          <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                          <li>
+                            <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                                <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                      </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">paysans</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                        <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">production</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                    </ul>
+                  </li>
+                  <li><a (click)="seDeconnecter()">deconnexion</a></li>
+
+              </ul>
+          </nav>
+          <div class="clear"></div>
+      </div>
+
+  </header>
+
+
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="http://localhost:4200/union">union</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/village">village</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/organe">organe</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/ouvrage">ouvrage</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/maintenance">maintenance</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/production">production</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/machine">machine</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/partenaires">partenaires</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/bailleur">bailleur</a></div>
+
+ </div>
+ <div class="container" style="width:100%;">
+     <div class="col-md-8 offset-md-6" style="padding: 155px;width: 100%;background-color: slategrey;font-size: 20px;">
+       <h1 style="font-family: cursive;">Informationtion sur la cuvette</h1>
+
+       <div>
+         <label style="font-family:'Passion One' ;" ><b>IDENTIFIANT : </b></label>{{cuvette?.id}}
+       </div>
+       <div>
+        <label style="font-family:'Passion One' ;"><b>NOM : </b></label>{{cuvette?.nom}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>PRESIDENT : </b></label>{{cuvette?.president}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>NOMBRE UNION : </b></label>{{cuvette?.nbreUnion}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b> TRESORIER: </b></label>{{cuvette?.tresorier}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>TRESORIER ADJOINT : </b></label>{{cuvette?.tresorierAdj}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>SECRETAIRE GENERAL : </b></label>{{cuvette?.secretaireG}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>SECRETAIRE GENERAL ADJOINT : </b></label>{{cuvette?.secretaireGADJ}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>SUPERFICIE : </b></label>{{cuvette?.superficie}}
+      </div>
+
+      <div><button class="btn btn-danger"  (click) = "Annuler()"> fermer </button></div>
+
+     </div>
+
+
+
+   </div>

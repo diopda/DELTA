@@ -1,0 +1,199 @@
+
+  <header>
+    <div class="inner">
+          <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+          <nav>
+              <ul class="sf-menu">
+                  <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                  <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/organe">organes</a></li>
+                        <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                        <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                        <li>
+                          <a href="http://localhost:4200/cuvette">actualités</a>
+                            <ul>
+                              <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                                <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                                <li><a href="http://localhost:4200/activité">activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://localhost:4200/village">villages</a></li>
+                        <li><a href="http://localhost:4200/machine">machines</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="http://localhost:4200/union">union</a>
+                      <ul>
+                        <li><a href="http://localhost:4200/section">sections</a></li>
+                          <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                          <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                          <li>
+                            <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                                <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                      </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">paysans</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                        <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">production</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                    </ul>
+                  </li>
+                  <li><a (click)="seDeconnecter()">deconnexion</a></li>
+
+              </ul>
+          </nav>
+          <div class="clear"></div>
+      </div>
+
+  </header>
+
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="http://localhost:4200/union">union</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/village">village</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/organe">organe</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/ouvrage">ouvrage</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/maintenance">maintenance</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/production">production</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/machine">machine</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/partenaires">partenaires</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/bailleur">bailleur</a></div>
+
+ </div>
+
+    <div class="col-md-8 offset-md-4" style="padding: 150px;background-color: silver;" >
+      <h1 style="text-align: center;">AJOUTER CUVETTE</h1>
+
+    <!-- Form -->
+    <div ng-controller="ExampleController">
+    <form  #monForm=ngForm (ngSubmit)="onSubmit()" style="text-align: center;">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form mt-0">
+
+            <input type="number" class="form-control" id="identifiant"  placeholder='identifiant' disabled
+            [(ngModel)] ="cuvette.id" name ="id" >
+            <label >identifiant</label>
+          </div>
+
+        </div>
+   <div class="col">
+
+      <div class="md-form mt-0">
+
+        <input type="text" class="form-control" id="nom"    placeholder='nom' required #nom="ngModel"
+        [(ngModel)] ="cuvette.nom" name ="nom" >
+            <label >nom</label>
+          </div>
+          <div [hidden]="nom.valid || nom.pristine">
+            Le nom est obligatoire
+            </div>
+
+        </div>
+      </div>
+
+      <div class="md-form">
+
+        <input type="number" class="form-control" id="nbreUnion"  placeholder='nombre union'  required #nbreunion="ngModel"
+        [(ngModel)]= "cuvette.nbreUnion" name="nbreUnion">
+        <label >nombre union</label>
+      </div>
+      <div [hidden]="nbreunion.valid || nbreunion.pristine">
+        Le nbreUnion est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" class="form-control"  id="president"  placeholder='president' required #president="ngModel"
+        [(ngModel)]= "cuvette.president" name="president">
+
+        <label >president</label>
+      </div>
+      <div [hidden]="president.valid || president.pristine">
+        Le president est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" id="tresorier" class="form-control" placeholder='tresorier' required #tresorier="ngModel"
+        [(ngModel)]= "cuvette.tresorier" name="tresorier">
+        <label>tresorier</label>
+      </div>
+      <div [hidden]="tresorier.valid || tresorier.pristine">
+        Le Tresorier est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" id="tresorierAdj" class="form-control"  placeholder='tresorier adjoint' required #tresorierAdj="ngModel"
+        [(ngModel)]= "cuvette.tresorierAdj" name="tresorierAdj">
+        <label>tresorier adjoint</label>
+      </div>
+      <div [hidden]="tresorierAdj.valid || tresorierAdj.pristine">
+        Le tresorier adjoint est obligatoire
+        </div>
+
+
+
+      <div class="md-form">
+
+        <input type="text" id="secretaireG" class="form-control"  placeholder='secretaire generale' required #secretaireG="ngModel"
+        [(ngModel)]= "cuvette.secretaireG" name="secretaireG">
+        <label>secretaire generale</label>
+      </div>
+      <div [hidden]="secretaireG.valid || secretaireG.pristine">
+        Le secretaire general est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" id="secretaireGADJ" class="form-control"  placeholder='secretaire generale adjoint' required #secretaireGADJ="ngModel"
+        [(ngModel)]= "cuvette.secretaireGADJ" name="secretaireGADJ">
+        <label>secretaire generale adjoint</label>
+      </div>
+      <div [hidden]="secretaireGADJ.valid || secretaireGADJ.pristine">
+        Le le secretaire g adjoint  est obligatoire
+        </div>
+
+      <div class="md-form">
+
+        <input type="text" id="superficie" class="form-control"  placeholder='superficie' required #superficie="ngModel"
+        [(ngModel)]= "cuvette.superficie" name="superficie">
+        <label>superficie</label>
+      </div>
+      <div [hidden]="superficie.valid || superficie.pristine">
+        Le superfice est obligatoire
+        </div>
+
+     <div> <button class="btn btn-success" type="submit" [disabled]=!monForm.valid style="margin: 50;"> valider </button>
+      <button class="btn btn-danger"  (click) = "Annuler()"> annuler </button></div>
+    </form>
+</div>
+
+</div>
+
+
+
+
+

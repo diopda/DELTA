@@ -1,0 +1,138 @@
+
+  <header>
+    <div class="inner">
+          <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+          <nav>
+              <ul class="sf-menu">
+                  <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                  <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/organe">organes</a></li>
+                        <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                        <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                        <li>
+                          <a href="http://localhost:4200/cuvette">actualités</a>
+                            <ul>
+                              <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                                <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                                <li><a href="http://localhost:4200/activité">activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://localhost:4200/village">villages</a></li>
+                        <li><a href="http://localhost:4200/machine">machines</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="http://localhost:4200/union">union</a>
+                      <ul>
+                        <li><a href="http://localhost:4200/section">sections</a></li>
+                          <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                          <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                          <li>
+                            <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                                <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                      </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">paysans</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                        <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">production</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+              </ul>
+          </nav>
+          <div class="clear"></div>
+      </div>
+
+  </header>
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="">union</a></div>
+      <div class="cuvmenu"><a href="">village</a></div>
+      <div class="cuvmenu"><a href="">Ajouter</a></div>
+
+
+    </div>
+
+    <div class="col-md-8 offset-md-4" style="padding: 150px;background-color: silver;" >
+      <h1 style="text-align: center;">Ajouter village</h1>
+
+    <!-- Form -->
+    <form (ngSubmit)="onSubmit()" >
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form mt-0">
+            <input type="number" class="form-control" id="identifiant"
+            [(ngModel)] ="village.id" name ="id">
+            <label >identifiant</label>
+          </div>
+        </div>
+   <div class="col">
+
+      <div class="md-form mt-0">
+        <input type="text" class="form-control" id="nom"
+        [(ngModel)] ="village.nom" name ="nom">
+            <label >nom</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="md-form">
+        <input type="number" class="form-control" id="population"
+        [(ngModel)]= "village.population" name="population">
+        <label >Population</label>
+
+      </div>
+
+      <div class="md-form">
+        <input type="number"  class="form-control" id="populationAtt"
+        [(ngModel)]= "village.populationAtt" name="populationAtt">
+        <label >population attributaire</label>
+
+      </div>
+
+      <div class="md-form">
+        <input type="number"  class="form-control" id="superficieEx"
+        [(ngModel)]= "village.superficieEx" name="superficieEx">
+        <label>superficie exploitable</label>
+      </div>
+
+      <div class="md-form">
+        <input type="number"  class="form-control" id="superficiePH"
+        [(ngModel)]= "village.superficiePH" name="superficiePH">
+        <label>superficie exploitable</label>
+      </div>
+
+      <div class="md-form">
+        <input type="number" class="form-control"  id="cuvette"
+        [(ngModel)]= "village.cuvette.id" name="cuvette">
+        <label>cuvette</label>
+      </div>
+      <button class="btn btn-success" type="submit"> valider </button>
+
+    </form>
+</div>
+
+
+
+
+
+
+    <!-- Content -->

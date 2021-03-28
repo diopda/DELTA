@@ -1,0 +1,147 @@
+
+
+  <header>
+    <div class="inner">
+          <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+          <nav>
+              <ul class="sf-menu">
+                  <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                  <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/organe">organes</a></li>
+                        <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                        <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                        <li>
+                          <a href="http://localhost:4200/cuvette">actualités</a>
+                            <ul>
+                              <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                                <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                                <li><a href="http://localhost:4200/activité">activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://localhost:4200/village">villages</a></li>
+                        <li><a href="http://localhost:4200/machine">machines</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="http://localhost:4200/union">union</a>
+                      <ul>
+                        <li><a href="http://localhost:4200/section">sections</a></li>
+                          <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                          <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                          <li>
+                            <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                                <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                      </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">paysans</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                        <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">production</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                    </ul>
+                  </li>
+                  <li><a (click)="seDeconnecter()">deconnexion</a></li>
+
+              </ul>
+          </nav>
+          <div class="clear"></div>
+      </div>
+
+  </header>
+
+
+   <!-- Content -->
+<div class="menu-vertical">
+
+     <div class="avatar"></div>
+     <h3 class="h3"> Bienvenue dans le menu</h3>
+     <div class="cuvmenu"><a href="http://localhost:4200/union">union</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/village">village</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/organe">organe</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/ouvrage">ouvrage</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/maintenance">maintenance</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/production">production</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/machine">machine</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/partenaires">partenaires</a></div>
+     <div class="cuvmenu"><a href="http://localhost:4200/bailleur">bailleur</a></div>
+
+</div>
+
+<div class="container" style="width:100%;">
+    <div class="col-md-8 offset-md-3" style="padding: 125px;width: 100%;">
+      <div class="row justify-content-center" style="margin-left: 250px;width: 1000px;">
+        <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="saisir valeur">
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </form>
+        </div>
+        <!--end of col-->
+      </div>
+      <h1>la liste des cuvettes</h1><div> <button (click) = "ajouterCuvette()" class="btn btn-info" style="font-family: cursive">ajouterCuvette</button></div>
+
+      <table class="table table-striped" style="backgroundColor:white; font-size: 14px;"  >
+        <thead >
+         <tr class="entete" style="font-size:16px;font-family: cursive;background-color: slategrey;">
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>president</th>
+            <th>Secretaire general</th>
+            <th>Secretaire general adj</th>
+            <th>Tresorier</th>
+            <th>TresorierAdj</th>
+            <th>Nombre union</th>
+            <th>Superficie</th>
+
+
+          </tr>
+
+        </thead>
+        <tbody>
+         <tr *ngFor ="let cuvette of cuvettes" >
+             <td>{{cuvette?.id}}</td>
+              <td>{{cuvette?.nom}}</td>
+              <td>{{cuvette?.president}}</td>
+               <td>{{cuvette?.secretaireG}}</td>
+              <td>{{cuvette?.secretaireGADJ}}</td>
+              <td>{{cuvette?.tresorier}}</td>
+              <td>{{cuvette?.tresorierAdj}}</td>
+              <td>{{cuvette?.nbreUnion}}</td>
+              <td>{{cuvette?.superficie}}</td>
+              <td>
+                <button (click) = "updateCuvette(cuvette?.id)" class="btn btn-info">Update</button>
+              </td>
+              <td>
+                <button (click) = "deleteCuvette(cuvette?.id)" class="btn btn-danger"  >Delete</button>
+              </td>
+              <td>
+                <button (click) = "detailsCuvette(cuvette?.id)" class="btn btn-info"  >Detail</button>
+              </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

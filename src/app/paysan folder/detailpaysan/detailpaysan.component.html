@@ -1,0 +1,110 @@
+<header>
+  <div class="inner">
+        <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+        <nav>
+            <ul class="sf-menu">
+                <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/organe">organes</a></li>
+                      <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                      <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                      <li>
+                        <a href="http://localhost:4200/cuvette">actualités</a>
+                          <ul>
+                            <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                              <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                              <li><a href="http://localhost:4200/activité">activités</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="http://localhost:4200/village">villages</a></li>
+                      <li><a href="http://localhost:4200/machine">machines</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/union">union</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/section">sections</a></li>
+                        <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                        <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                        <li>
+                          <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                              <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">paysans</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                      <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">production</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+    </div>
+
+</header>
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="">section</a></div>
+      <div class="cuvmenu"><a href="">groupement</a></div>
+      <div class="cuvmenu"><a href="">paysan</a></div>
+      <div class="cuvmenu"><a href="">ajouter paysan</a></div>
+
+ </div>
+
+ <div class="container" style="width:100%;">
+     <div class="col-md-8 offset-md-6" style="padding: 155px;width: 100%;background-color: slategrey;font-size: 20px;">
+       <h1 style="font-family: cursive;">Informationtion sur le paysan</h1>
+
+       <div>
+         <label style="font-family:'Passion One' ;" ><b>IDENTIFIANT : </b></label>{{paysan?.id}}
+       </div>
+       <div>
+        <label style="font-family:'Passion One' ;" ><b>REFERENCE : </b></label>{{paysan?.reference}}
+      </div>
+       <div>
+        <label style="font-family:'Passion One' ;"><b>NOM : </b></label>{{paysan?.nom}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>PRENOM : </b></label>{{paysan?.prenom}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>ADRESSE : </b></label>{{paysan?.adresse}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b> TELEPHONE: </b></label>{{paysan?.tel}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>EMAIL : </b></label>{{paysan?.email}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>FONCTION : </b></label>{{paysan?.fonction}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>GROUPEMENT : </b></label>{{paysan?.idgroupement}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>SAISON : </b></label>{{paysan?.saison}}
+      </div>
+      <div>
+        <label style="font-family:'Passion One' ;"><b>SUPERFICIE : </b></label>{{paysan?.superficie}}
+      </div>
+
+     </div>
+   </div>

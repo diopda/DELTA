@@ -1,0 +1,174 @@
+<header>
+  <div class="inner">
+        <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+        <nav>
+            <ul class="sf-menu">
+                <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/organe">organes</a></li>
+                      <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                      <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                      <li>
+                        <a href="http://localhost:4200/cuvette">actualités</a>
+                          <ul>
+                            <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                              <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                              <li><a href="http://localhost:4200/activité">activités</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="http://localhost:4200/village">villages</a></li>
+                      <li><a href="http://localhost:4200/machine">machines</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/union">union</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/section">sections</a></li>
+                        <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                        <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                        <li>
+                          <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                              <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">paysans</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                      <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">production</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+    </div>
+
+</header>
+
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="http://localhost:4200/cuvette">cuvette</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/ouvrage">ouvrage</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/organe">organe</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/maintenance">maintenance</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/savemaintenance">ajouter maintenance</a></div>
+
+
+  </div>
+
+
+    <div class="col-md-8 offset-md-4" style="padding: 150px;background-color: silver;" >
+      <h1 style="text-align: center;">MODIFIER MAINTENANCE</h1>
+
+    <!-- Form -->
+    <div ng-controller="ExampleController">
+    <form  #monForm=ngForm (ngSubmit)="onSubmit()" style="text-align: center;">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form mt-0">
+
+            <input type="number" class="form-control" id="identifiant"  placeholder='identifiant'
+            [(ngModel)] ="maintenance.id" name ="id" >
+            <label >identifiant</label>
+          </div>
+
+        </div>
+   <div class="col">
+
+      <div class="md-form mt-0">
+
+        <input type="text" class="form-control" id="intervention"    placeholder='intervention' required #intervention="ngModel"
+        [(ngModel)] ="maintenance.intervention" name ="intervention" >
+            <label >intervention</label>
+          </div>
+          <div [hidden]="intervention.valid || intervention.pristine">
+            l'intervention  est obligatoire
+            </div>
+
+        </div>
+      </div>
+
+      <div class="md-form">
+
+        <input type="text" class="form-control" id="frequence"  placeholder='frequence'  required #frequence="ngModel"
+        [(ngModel)]= "maintenance.frequence" name="frequence">
+        <label >frequence</label>
+      </div>
+      <div [hidden]="frequence.valid || frequence.pristine">
+        La frequence est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" class="form-control"  id="prestataire"  placeholder='prestataire' required #prestataire="ngModel"
+        [(ngModel)]= "maintenance.prestataire" name="prestataire">
+
+        <label >prestataire</label>
+      </div>
+      <div [hidden]="prestataire.valid || prestataire.pristine">
+        prestataire est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="number" id="fraismaintenance " class="form-control" placeholder='fraismaintenance ' required #fraismaintenance ="ngModel"
+        [(ngModel)]= "maintenance.fraismaintenance" name="fraismaintenance ">
+        <label>frais de maintenance</label>
+      </div>
+      <div [hidden]="fraismaintenance.valid || fraismaintenance.pristine">
+        Les frais de maintenance est obligatoire
+        </div>
+
+
+      <div class="md-form">
+
+        <input type="text" id="type" class="form-control"  placeholder='type' required #type="ngModel"
+        [(ngModel)]= "maintenance.type" name="type">
+        <label>type maintenance</label>
+      </div>
+      <div [hidden]="type.valid || type.pristine">
+        type de maintenance est obligatoire
+        </div>
+
+
+
+      <div class="md-form">
+
+        <input type="annee" id="annee" class="form-control"  placeholder='date maintenance' required #annee="ngModel"
+        [(ngModel)]= "maintenance.annee" name="annee">
+        <label>annee maintenance</label>
+      </div>
+      <div [hidden]="annee.valid || annee.pristine">
+        L'annee de maintenance est obligatoire
+        </div>
+
+      <button class="btn btn-success" type="submit" [disabled]=!monForm.valid> valider </button>
+
+    </form>
+</div>
+
+</div>
+
+
+
+
+

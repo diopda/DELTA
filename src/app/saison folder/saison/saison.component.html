@@ -1,0 +1,99 @@
+<header>
+  <div class="inner">
+        <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+        <nav>
+            <ul class="sf-menu">
+                <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/organe">organes</a></li>
+                      <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                      <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                      <li>
+                        <a href="http://localhost:4200/cuvette">actualités</a>
+                          <ul>
+                            <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                              <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                              <li><a href="http://localhost:4200/activité">activités</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="http://localhost:4200/village">villages</a></li>
+                      <li><a href="http://localhost:4200/machine">machines</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/union">union</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/section">sections</a></li>
+                        <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                        <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                        <li>
+                          <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                              <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">paysans</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                      <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">production</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+    </div>
+
+</header>
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="">Saisons</a></div>
+      <div class="cuvmenu"><a href="">ajouter Saison</a></div>
+
+
+ </div>
+
+
+     <div class="col-md-6 offset-md-4" style="padding: 125px;">
+       <h1>la liste des saisons</h1><div> <button type="button" class="btn btn-primary mb-2" style='width: 100px;'>Ajouter</button></div>
+
+       <table class="table table-striped" style="backgroundColor:white;"  >
+         <thead >
+          <tr class="entete" style="backgroundColor:gray">
+             <th>Identifiant</th>
+            <th>nom</th>
+            <th>annee</th>
+
+
+           </tr>
+
+         </thead>
+         <tbody>
+          <tr *ngFor ="let saison of saisons" >
+              <td>{{saison?.id}}</td>
+              <td>{{saison?.nom}}</td>
+              <td>{{saison?.annee}}</td>
+
+
+
+
+
+           </tr>
+         </tbody>
+       </table>
+     </div>
+

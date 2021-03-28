@@ -1,0 +1,191 @@
+
+  <header>
+    <div class="inner">
+          <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+          <nav>
+              <ul class="sf-menu">
+                  <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                  <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/organe">organes</a></li>
+                        <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                        <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                        <li>
+                          <a href="http://localhost:4200/cuvette">actualités</a>
+                            <ul>
+                              <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                                <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                                <li><a href="http://localhost:4200/activité">activités</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="http://localhost:4200/village">villages</a></li>
+                        <li><a href="http://localhost:4200/machine">machines</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="http://localhost:4200/union">union</a>
+                      <ul>
+                        <li><a href="http://localhost:4200/section">sections</a></li>
+                          <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                          <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                          <li>
+                            <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                                <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                      </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">paysans</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                        <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/paysan">production</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                    </ul>
+                  </li>
+                  <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+              </ul>
+          </nav>
+          <div class="clear"></div>
+      </div>
+
+  </header>
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="http://localhost:4200/union">union</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/section">section</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/goupement">groupement</a></div>
+      <div class="cuvmenu"><a href="http://localhost:4200/savesection">Ajouter Section</a></div>
+
+    </div>
+
+    <div class="col-md-8 offset-md-4" style="padding: 150px;background-color: silver;" >
+      <h1 style="text-align: center;">AJOUTER SECTION</h1>
+
+    <!-- Form -->
+    <form #monForm=ngForm (ngSubmit)="onSubmit()" style="text-align: center;">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form mt-0">
+            <input type="number" class="form-control" id="identifiant" placeholder='identifiant'
+            [(ngModel)] ="section.id" name ="id">
+            <label >identifiant</label>
+          </div>
+        </div>
+   <div class="col">
+
+      <div class="md-form mt-0">
+        <input type="text" class="form-control" id="nom" placeholder='nom' required #nom="ngModel"
+        [(ngModel)] ="section.nom" name ="nom">
+            <label >nom</label>
+          </div>
+          <div [hidden]="nom.valid || nom.pristine">
+            La nom est obligatoire
+            </div>
+        </div>
+      </div>
+
+      <div class="md-form">
+        <input type="number" class="form-control" id="nbreGroupement" placeholder='nombre groupement' required #nbreGroupement="ngModel"
+        [(ngModel)]= "section.nbreGroupement" name="nbreGroupement">
+        <label >nombre union</label>
+      </div>
+      <div [hidden]="nbreGroupement.valid || nbreGroupement.pristine">
+        La nombre groupement est obligatoire
+        </div>
+
+
+      <div class="md-form">
+        <input type="text" class="form-control"  id="president" placeholder='president' required #president="ngModel"
+        [(ngModel)]= "section.president" name="president">
+        <label >president</label>
+      </div>
+      <div [hidden]="president.valid || president.pristine">
+        La president est obligatoire
+        </div>
+      <div class="md-form">
+        <input type="text" class="form-control"  id="vicePresident" placeholder='vice president' required #vicePresident="ngModel"
+        [(ngModel)]= "section.vicePresident" name="vicePresident">
+        <label >vice president</label>
+      </div>
+      <div [hidden]="vicePresident.valid || vicePresident.pristine">
+        Le vice president est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="text" id="tresorier" class="form-control" placeholder='tresorier' required #tresorier="ngModel"
+        [(ngModel)]= "section.tresorier" name="tresorier">
+        <label>tresorier</label>
+      </div>
+
+      <div [hidden]="tresorier.valid || tresorier.pristine">
+         tresorier est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="text" id="tresorierAdj" class="form-control" placeholder='tresorier adloit' required #tresorierAdj="ngModel"
+        [(ngModel)]= "section.tresorierAdj" name="tresorierAdj">
+        <label>tresorier adjoint</label>
+      </div>
+      <div [hidden]="tresorierAdj.valid || tresorierAdj.pristine">
+        Le tresorier adjoint  est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="text" id="secretaireG" class="form-control" placeholder='secretaire general' required #secretaireG="ngModel"
+        [(ngModel)]= "section.secretaireG" name="secretaireG">
+        <label>secretaire generale</label>
+      </div>
+      <div [hidden]="secretaireG.valid || secretaireG.pristine">
+        Lesecretaire general est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="text" id="secretaireGADJ" class="form-control" placeholder='secretaire g adjoint' required #secretaireGADJ="ngModel"
+        [(ngModel)]= "section.secretaireGadj" name="secretaireGADJ">
+        <label>secretaire generale adjoint</label>
+      </div>
+      <div [hidden]="secretaireGADJ.valid || secretaireGADJ.pristine">
+        Le secretaire general adjoit est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="number" id="superficie" class="form-control" placeholder='superficie' required #superficie="ngModel"
+        [(ngModel)]= "section.superficieAtt" name="superficie">
+        <label>superficie</label>
+      </div>
+      <div [hidden]="superficie.valid || superficie.pristine">
+        La superficie est obligatoire
+        </div>
+
+      <div class="md-form">
+        <input type="number" id="unionlocal" class="form-control" placeholder='union locale' required #section.unionlocal.id="ngModel"
+        [(ngModel)]= "section.unionlocal.id" name="unionlocal">
+        <label>union</label>
+      </div>
+      <div [hidden]="section.unionlocal.id.valid || section.unionlocal.id.pristine">
+         union est obligatoire
+        </div>
+      <button class="btn btn-success" type="submit" [disabled]=!monForm.valid> valider </button>
+
+    </form>
+</div>
+
+
+
+
+
+
+    <!-- Content -->

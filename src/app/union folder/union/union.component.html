@@ -1,0 +1,146 @@
+<header>
+  <div class="inner">
+        <h1 class="logo"><a href="http://localhost:4200/acceuil">CuvetteBoundoum - Agriculture company</a></h1>
+        <nav>
+            <ul class="sf-menu">
+                <li class="current"><a routerLink="/acceuil">ACCEUIL</a></li>
+                <li><a href="http://localhost:4200/cuvette">cuvette</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/organe">organes</a></li>
+                      <li><a href="http://localhost:4200/ouvrage">ouvrages</a></li>
+                      <li><a href="http://localhost:4200/maintenance">mainetenances</a></li>
+                      <li>
+                        <a href="http://localhost:4200/cuvette">actualités</a>
+                          <ul>
+                            <li><a href="http://localhost:4200/partenaire">partenaires</a></li>
+                              <li><a href="http://localhost:4200/bailleur">bailleurs</a></li>
+                              <li><a href="http://localhost:4200/activité">activités</a></li>
+                          </ul>
+                      </li>
+                      <li><a href="http://localhost:4200/village">villages</a></li>
+                      <li><a href="http://localhost:4200/machine">machines</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://localhost:4200/union">union</a>
+                    <ul>
+                      <li><a href="http://localhost:4200/section">sections</a></li>
+                        <li><a href="http://localhost:4200/groupement">groupement</a></li>
+                        <li><a href="http://localhost:4200/magasin">magasins</a></li>
+                        <li>
+                          <a href="http://localhost:4200/gestionnaire">gestionnaires</a>  </li>
+
+                              <li><a href="http://localhost:4200/machine">machines</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">paysans</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/exigible">exigibles</a></li>
+                      <li><a href="http://localhost:4200/intrants">intrants</a></li>
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/paysan">production</a>
+                  <ul>
+                    <li><a href="http://localhost:4200/production">production</a></li>
+
+
+                  </ul>
+                </li>
+                <li><a href="http://localhost:4200/authentification">deconnexion</a></li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+    </div>
+
+</header>
+
+    <!-- Content -->
+    <div class="menu-vertical">
+
+      <div class="avatar"></div>
+      <h3 class="h3"> Bienvenue dans le menu</h3>
+      <div class="cuvmenu"><a href="">union</a></div>
+      <div class="cuvmenu"><a href="">village</a></div>
+      <div class="cuvmenu"><a href="">section</a></div>
+      <div class="cuvmenu"><a href="">Groupements</a></div>
+      <div class="cuvmenu"><a href="">paysans</a></div>
+      <div class="cuvmenu"><a href="">ajouter union</a></div>
+
+ </div>
+
+
+     <div class="col-md-6 offset-md-4" style="padding: 125px;margin-left: 200px;">
+      <div class="row justify-content-center" style="margin-left: 250px;width: 1000px;">
+        <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="saisir valeur">
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </form>
+        </div>
+        <!--end of col-->
+      </div>
+       <h1>la liste des unions</h1><div><button (click) = "ajouterUnion()" class="btn btn-info" style="font-family: cursive">ajouterUnion</button></div>
+
+       <table class="table table-striped" style="backgroundColor:white;"  >
+         <thead >
+          <tr class="entete" style="backgroundColor:gray">
+             <th>Identifiant</th>
+            <th>nom</th>
+            <th>nombre section</th>
+            <th>president</th>
+            <th>vicePresident</th>
+            <th>tresorier</th>
+            <th>tresorierAdj</th>
+            <th>secretaireG</th>
+            <th>secretaireGadj</th>
+            <th>superficieAtt</th>
+            <th>village</th>
+
+
+
+           </tr>
+
+         </thead>
+         <tbody>
+          <tr *ngFor ="let union of unions" >
+              <td>{{union?.id}}</td>
+              <td>{{union?.nom}}</td>
+              <td>{{union?.nbreSection}}</td>
+              <td>{{union?.president}}</td>
+              <td>{{union?.vicePresident}}</td>
+              <td>{{union?.tresorier}}</td>
+              <td>{{union?.trsorierAdj}}</td>
+              <td>{{union?.secretaireG}}</td>
+              <td>{{union?.secretaireGadj}}</td>
+              <td>{{union?.superficieAtt}}</td>
+              <td>{{union?.village.nom}}</td>
+
+              <td>
+                <button (click) = "updateUnion(union?.id)" class="btn btn-info">Update</button>
+              </td>
+              <td>
+                <button (click) = "deleteUnion(union?.id)" class="btn btn-danger"  >Delete</button>
+              </td>
+              <td>
+                <button (click) = "detailsUnion(union?.id)" class="btn btn-info"  >Detail</button>
+              </td>
+
+           </tr>
+         </tbody>
+       </table>
+     </div>
+
